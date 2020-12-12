@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from connection import Base, engine, session
 
 

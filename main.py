@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from formatters import clear_terminal_screen
 from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix, search_age_range
 
