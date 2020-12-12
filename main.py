@@ -2,7 +2,7 @@ from connection import session
 from classPerson import Person
 from classAddresses import Addresses
 from formatters import print_user, print_address, clear_terminal_screen
-from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix
+from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix, search_age_range
 
 MENU = '''
 ===================================
@@ -41,8 +41,7 @@ def main():
         elif menu_choice == "4":
             search_phone_prefix()
         elif menu_choice == "5":
-            # searchAgeRange()
-            print("....search by age")
+            search_age_range()
         elif menu_choice == "6":
             # createNewContact()
             print("....create a new contact")
