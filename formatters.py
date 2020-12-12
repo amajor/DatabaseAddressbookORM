@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import date
 
 
@@ -73,3 +74,34 @@ def print_user(person):
     print("++++\n++++    BIRTHDAY: ", person.person_DOB)
     print("++++               ({} years old)".format(age))
     print("++++\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
+
+
+###############################################
+# Validates the input string for a date       #
+###############################################
+def validate_date(string):
+    # Does it match the expected format YYYY-mm-dd?
+    match_format = re.search(r"\d{4}-\d{1,2}-\d{1,2}", string)
+    if not match_format:
+        print("\n  *** Does not match format: YYYY-mm-dd")
+        is_valid = False
+        return is_valid
+
+    split_date = string.split("-")
+
+    # Validate the month
+    month = split_date[1]
+    is_valid = int(month) <= 12
+    if not is_valid:
+        print("\n  *** {} is not a real month.".format(month))
+        return is_valid
+
+    # Validate the day
+    day = split_date[2]
+    # TODO: We can get more complex here based on the month.
+    is_valid = int(day) <= 31
+    if not is_valid:
+        print("\n  *** {} is not a real day of the month.".format(day))
+        return is_valid
+
+    return is_valid
