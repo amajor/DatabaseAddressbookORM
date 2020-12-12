@@ -1,5 +1,4 @@
-from connection import Base, engine
-from sqlalchemy.orm import sessionmaker
+from connection import Base, engine, session
 
 
 # USER TABLE
@@ -25,7 +24,6 @@ user3 = Person(person_name='Jones', person_DOB='1962-5-14', active_phone_number=
 user4 = Person(person_name='DeVries', person_DOB='1982-7-3', active_phone_number='9997654323')
 
 # Add the data to the tables
-session = sessionmaker(bind=engine)()
 session.add(user1)
 session.add(user2)
 session.add(user3)
