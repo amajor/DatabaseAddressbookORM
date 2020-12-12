@@ -37,7 +37,7 @@ Type your menu choice and follow the steps to interact with the program.
 ## Requirements
 
 It is recommended that you use [PyCharm](https://www.jetbrains.com/pycharm/download/)
-as your IDE for this project. This allows you to easily create a virual environment
+as your IDE for this project. This allows you to easily create a virtual environment
 for loading dependencies.
 
 * [Install MySQL](https://dev.mysql.com/downloads/mysql/)
