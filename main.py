@@ -57,16 +57,3 @@ def main():
 
 # Run the main program
 main()
-
-
-print('\nPEOPLE:\n==========')
-for person in session.query(Person):
-    print_user(person)
-
-print('\nADDRESSES:\n==========')
-for address in session.query(Addresses):
-    print_address(address)
-
-print('\nFILTERING:\n==========')
-for person in session.query(Person).filter(Person.person_name.like('%Ma%')):
-    print_user(person)
