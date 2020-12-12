@@ -1,7 +1,4 @@
-from connection import session
-from classPerson import Person
-from classAddresses import Addresses
-from formatters import print_user, print_address, clear_terminal_screen
+from formatters import clear_terminal_screen
 from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix, search_age_range
 
 MENU = '''
