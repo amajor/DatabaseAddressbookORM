@@ -11,7 +11,7 @@ simple address book.
 
 # Using the Program
 
-Run the progrm by cloning or downloading this repository, then navigating to
+Run the program by cloning or downloading this repository, then navigating to
 the directory where the file resides.
 
 Follow the [installation requirements](./README.md#installation) at the bottom
