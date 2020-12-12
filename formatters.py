@@ -1,3 +1,6 @@
+from datetime import date, datetime
+
+
 ###################################
 # Return a formatted phone number #
 ###################################
@@ -16,3 +19,30 @@ def format_phone(phone):
 
     # Return formatted number string
     return "({}){}-{}".format(area_code, prefix, line_number)
+
+
+###############################################
+# Print the formatted address to the terminal #
+###############################################
+def print_address(address):
+    print("++++\n++++    ADDRESS:  ", address.street_address)
+    print("++++               {}, {} {}".format(address.city, address.state, address.zip_code))
+
+
+###############################################
+# Print the formatted person to the terminal  #
+###############################################
+def print_user(person):
+    # Format the phone number
+    formatted_phone = format_phone(person.active_phone_number)
+
+    # Calculate the person's age
+    age = date.today().year - person.person_DOB.year
+
+    # Print record for user.
+    print("+++++++++++++++++++++++++++++++++++++++++++++++")
+    print("++++\n++++    NAME:     ", person.person_name)
+    print("++++\n++++    PHONE:    ", formatted_phone)
+    print("++++\n++++    BIRTHDAY: ", person.person_DOB)
+    print("++++               ({} years old)".format(age))
+    print("++++\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
