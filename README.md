@@ -2,9 +2,33 @@
 A python console application that uses a MySQL database and an ORM to manage a
 simple address book.
 
+* [Using the Program](./README.md#using-the-program)
 * [Installation](./README.md#installation)
   * [Requirements](./README.md#requirements)
   * [Setup](./README.md#setup)
+
+-----
+
+# Using the Program
+
+Run the progrm by cloning or downloading this repository, then navigating to
+the directory where the file resides.
+
+Follow the [installation requirements](./README.md#installation) at the bottom
+of this document for any required software or drivers.
+
+Then, execute the program:
+
+```python
+./main.py
+```
+
+You will be presented with a menu that you can use to select your options for
+interacting with the address book.
+
+![Image of Menu Choices](./docs/images/menu.png)
+
+Type your menu choice and follow the steps to interact with the program.
 
 -----
 
