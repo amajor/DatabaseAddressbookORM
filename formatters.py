@@ -1,4 +1,22 @@
-from datetime import date, datetime
+import os
+from datetime import date
+
+
+###################################
+# Clears the terminal screen      #
+###################################
+def clear_terminal_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+###################################
+# Prints the phone format         #
+###################################
+def print_phone_format():
+    print("\n(AAA)PPP-LLLL\n")
+    print("  Area Code   --> (AAA)")
+    print("  Prefix      --> PPP")
+    print("  Line Number --> LLLL")
 
 
 ###################################
@@ -19,6 +37,15 @@ def format_phone(phone):
 
     # Return formatted number string
     return "({}){}-{}".format(area_code, prefix, line_number)
+
+
+###############################################
+# Print that a matching contact was not found #
+###############################################
+def print_person_not_found():
+    print("++++++++++++++++++++++++++++++++++++++++")
+    print("+\n+  No record found.")
+    print("+\n++++++++++++++++++++++++++++++++++++++++\n")
 
 
 ###############################################
