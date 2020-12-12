@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from create import create_new_contact
 from formatters import clear_terminal_screen
 from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix, search_age_range
 
@@ -41,8 +42,7 @@ def main():
         elif menu_choice == "5":
             search_age_range()
         elif menu_choice == "6":
-            # createNewContact()
-            print("....create a new contact")
+            create_new_contact()
         elif menu_choice == "0":
             quit()
         else:
