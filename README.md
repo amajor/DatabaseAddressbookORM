@@ -26,5 +26,6 @@ for loading dependencies.
 Run the seed file to set up your database in MySQL.
 
 * [`MySQL/create.sql`](./MySQL/create.sql)
-
-All that this seed file does is create the schema, `AddressBookORM`.
+  * All that this seed file does is create the schema, `AddressBookORM`.
+* [`setup.py`](./setup.py)
+  * This builds and populates our tables
