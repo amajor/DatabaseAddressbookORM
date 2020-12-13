@@ -1,11 +1,16 @@
 import re
-from datetime import date
 from classAddresses import Addresses
 from classAssociation import Association
 from classPerson import Person
 from connection import session
-from formatters import print_user, validate_date
+from formatters import print_user, validate_date, format_today
 from search import PEOPLE
+
+
+def return_matching_user(name):
+    matches = PEOPLE.filter(Person.person_name.like(name))
+    for match in matches:
+        return match
 
 
 def check_if_user_exists(name):
@@ -47,11 +52,37 @@ def create_new_contact():
 
     user_exists = check_if_user_exists(name)
     if user_exists:
-        print("..... update the user ......")
-        # print("\nSuccessfully updated {}!\n".format(name))
+        current_user = return_matching_user(name)
+
+        # Update the active phone number
+        current_user.active_phone_number = phone
+
+        # Close the current address (add today as end_date)
+        for address in current_user.addresses:
+            if address.end_date is None:
+                address.end_date = format_today()
+
+        # Create a new address
+        new_address = Addresses(
+            street_address=street,
+            city=city,
+            state=state,
+            zip_code=zip_code
+        )
+        new_association = Association(
+            start_date=format_today()
+        )
+
+        # Associate new address to current user
+        new_association.address = new_address
+        current_user.addresses.append(new_association)
+
+        # Execute the query
+        session.commit()
+        print("\nSuccessfully updated {}!\n".format(name))
 
         # Display newly added user
-        # print_user(person)
+        print_user(current_user)
 
     else:
         new_user = Person(
@@ -66,7 +97,7 @@ def create_new_contact():
             zip_code=zip_code
         )
         new_association = Association(
-            start_date=date.today().strftime("%Y-%-m-%-d")
+            start_date=format_today()
         )
         new_association.address = new_address
         new_user.addresses.append(new_association)

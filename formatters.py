@@ -111,3 +111,10 @@ def validate_date(string):
         return is_valid
 
     return is_valid
+
+
+###############################################
+# Format today's date in the way we need      #
+###############################################
+def format_today():
+    return date.today().strftime("%Y-%-m-%-d")
