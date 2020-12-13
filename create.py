@@ -1,5 +1,7 @@
 import re
-
+from datetime import date
+from classAddresses import Addresses
+from classAssociation import Association
 from classPerson import Person
 from connection import session
 from formatters import print_user, validate_date
@@ -57,11 +59,17 @@ def create_new_contact():
             person_DOB=date_of_birth,
             active_phone_number=phone
         )
-        # link the...
-        # street
-        # city
-        # state
-        # zip_code
+        new_address = Addresses(
+            street_address=street,
+            city=city,
+            state=state,
+            zip_code=zip_code
+        )
+        new_association = Association(
+            start_date=date.today().strftime("%Y-%-m-%-d")
+        )
+        new_association.address = new_address
+        new_user.addresses.append(new_association)
 
         # Execute the query
         session.add(new_user)
