@@ -24,7 +24,6 @@ MENU = '''
 
 # Define the main program that will run.
 def main():
-    initialize_base()
     clear_terminal_screen()
 
     # Get user input
@@ -56,3 +55,4 @@ def main():
 
 # Run the main program
 main()
+

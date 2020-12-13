@@ -100,7 +100,7 @@ def drop_all_tables():
 drop_all_tables()
 setup()
 
-for user in session.query(Person).filter(Person.person_name.like("Major")):
-    print(user.person_name)
-    for association in user.addresses:
-        print("  ", association.address.street_address)
+# for user in session.query(Person).filter(Person.person_name.like("Major")):
+#     print(user.person_name)
+#     for association in user.addresses:
+#         print("  ", association.address.street_address)
