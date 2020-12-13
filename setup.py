@@ -4,6 +4,7 @@ from connection import Base, engine, session
 from classPerson import Person
 from classAddresses import Addresses
 from classAssociation import Association
+from initialize import initialize_base
 
 
 def setup():
@@ -84,14 +85,22 @@ def setup():
 
     # Commit the changes
     session.commit()
+    print("Successfully populated tables")
 
 
 def drop_all_tables():
-    session.commit()
-    Base.metadata.create_all(engine)
+    initialize_base()
+
+    Association.__table__.drop()
     Person.__table__.drop()
     Addresses.__table__.drop()
-    Association.__table__.drop()
+    print("Successfully dropped tables")
 
 
+drop_all_tables()
 setup()
+
+for user in session.query(Person).filter(Person.person_name.like("Major")):
+    print(user.person_name)
+    for association in user.addresses:
+        print("  ", association.address.street_address)
