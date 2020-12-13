@@ -73,7 +73,8 @@ def print_user(person):
 
     # Find address
     for association in person.addresses:
-        print_address(association.address)
+        if association.end_date is None:
+            print_address(association.address)
 
     print("++++\n++++    PHONE:    ", formatted_phone)
     print("++++\n++++    BIRTHDAY: ", person.person_DOB)
