@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from create import create_new_contact
 from formatters import clear_terminal_screen
-from initialize import initialize_base
 from search import search_exact_name, search_partial_name, search_phone_area_code, search_phone_prefix, search_age_range
 
 MENU = '''
