@@ -70,6 +70,11 @@ def print_user(person):
     # Print record for user.
     print("+++++++++++++++++++++++++++++++++++++++++++++++")
     print("++++\n++++    NAME:     ", person.person_name)
+
+    # Find address
+    for association in person.addresses:
+        print_address(association.address)
+
     print("++++\n++++    PHONE:    ", formatted_phone)
     print("++++\n++++    BIRTHDAY: ", person.person_DOB)
     print("++++               ({} years old)".format(age))
